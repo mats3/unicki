@@ -13,7 +13,7 @@
 	currentTest = malloc(sizeof(test_t)); \
 	strcpy(currentTest->description, (inputDesc)); \
 	currentTest->status = PENDING; \
-	setFlag(FLAG_TEST);
+	setFlag(FLAG_TEST | FLAG_SUITEHASTEST);
 
 enum { FAILED, PASSED, PENDING };
 

@@ -7,5 +7,5 @@ void setFlag(int flag) {
 }
 
 void popFlag(int flag) {
-	flags ^= flag;
+	flags &= ~flag;
 }

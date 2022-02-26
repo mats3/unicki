@@ -17,8 +17,7 @@ suite("calculation") {
 			assertPtrIsNull(&result);
 		}
 	}_end;
-	test("ich liebe debi nicht danke") {
-	}
+	test("ich liebe debi nicht danke");
 }_end;
 
 suite("fun") {

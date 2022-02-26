@@ -7,6 +7,8 @@
 
 #define suite(x) \
 	tearDownTest(); \
+	if (flags & FLAG_SUITEHASTEST) { printf("\n"); } \
+	popFlag(FLAG_SUITEHASTEST); \
 	printf("%s%s:\n", _P, (x)); \
 	paddingStage++;
 
