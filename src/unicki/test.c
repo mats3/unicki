@@ -21,7 +21,7 @@ void tearDownTest() {
 			printf("%s", currentTest->errorMessage);
 
 		testInfo[currentTest->status]++;
+		strcpy(currentTest->errorMessage, "");
 		popFlag(FLAG_TEST);
-		free(currentTest);
 	}
 }

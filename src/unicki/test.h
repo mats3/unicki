@@ -10,7 +10,6 @@
 
 #define test(inputDesc) \
 	tearDownTest(); \
-	currentTest = malloc(sizeof(test_t)); \
 	strcpy(currentTest->description, (inputDesc)); \
 	currentTest->status = PENDING; \
 	setFlag(FLAG_TEST | FLAG_SUITEHASTEST);
@@ -19,7 +18,7 @@ enum { FAILED, PASSED, PENDING };
 
 typedef struct test_t {
 	char description[150];
-	char errorMessage[800];
+	char errorMessage[500];
 	int status;
 } test_t;
 

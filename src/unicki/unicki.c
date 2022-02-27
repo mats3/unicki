@@ -10,10 +10,10 @@ bool isTestPassedConditonTrue(bool condition) {
 	return false;
 }
 
-void isTestFailed(char *expected, char *received) {
+void isTestFailed(char *e, char *r) {
 	currentTest->status = FAILED;
 
-	char errorMessage[800];
+	char errorMessage[500];
 	sprintf(errorMessage,
 		COLOR_RED
 		"%sxxxxxxxxxxxxxxxxxxxx\n"
@@ -22,9 +22,9 @@ void isTestFailed(char *expected, char *received) {
 		"%sxxxxxxxxxxxxxxxxxxxx\n\n"
 		COLOR_DEFAULT,
 		_P, _P,
-		expected,
+		e,
 		_P,
-		received,
+		r,
 		_P);
 	strcat(currentTest->errorMessage,
 		   errorMessage);
