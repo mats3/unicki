@@ -15,6 +15,17 @@
 	return 0; \
 	}
 
+#define errorDummy(type, ...) \
+	{ type errorDummy = __VA_ARGS__; \
+	
+
+#define catchErrorPtr(errorPtr, ptr) \
+	if (ptr == NULL) { \
+		(errorPtr) = &errorDummy; \
+	}
+
+#define _endDummy }
+
 void assertCharEq(char expected, char received);
 
 void assertIntEq(int expected, int received);
