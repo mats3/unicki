@@ -8,7 +8,12 @@
 
 #define _testSection_ \
 	int main(int argc, char **argv) { \
-	printContent(TITLE);
+	printContent(TITLE); \
+	currentTest = malloc(sizeof(test_t)); \
+	strcpy(currentTest->description, ""); \
+	strcpy(currentTest->errorMessage, ""); \
+	currentTest->status = PENDING;
+
 
 #define _endSection_ \
 	printTestInfo(); \
