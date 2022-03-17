@@ -69,12 +69,7 @@ tests/bin/%: tests/%.c all
 
 installLib: all
 	sudo cp ./bin/libunicki.a /usr/lib
-	sudo cp ./src/unicki/unicki.h /usr/include/unicki
-	sudo cp ./src/unicki/suite.h /usr/include/unicki
-	sudo cp ./src/unicki/test.h /usr/include/unicki
-	sudo cp ./src/unicki/ui.h /usr/include/unicki
-	sudo cp ./src/unicki/flag.h /usr/include/unicki
-
+	sudo cp ./src/unicki.h /usr/include/unicki.h
 
 install: test 
 	@echo "Are You Sure To Install (Y,N)"; \
