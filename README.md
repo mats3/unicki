@@ -1,4 +1,6 @@
-# unicki
+# UNICKI
+Unicki is a lightweight C unit testing framework.
+Supports Linux and Windows.
 
 # Installation
 
