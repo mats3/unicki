@@ -22,6 +22,9 @@ suite("calculation") {
 		test("other") {
 			assertPtrIsNull(NULL);
 		}
+		test("float") {
+			assertFloatEq(10.12, 12.13);
+		}
 	}_end;
 }_end;
 

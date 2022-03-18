@@ -50,6 +50,16 @@ void assertIntEq(int expected, int received) {
 	isTestFailed(ex, re);
 }
 
+void assertFloatEq(float expected, float received) {
+	if (isTestPassedConditonTrue(expected == received)) { return; }
+
+	char ex[50], re[50];
+	sprintf(ex, "%f", expected);
+	sprintf(re, "%f", received);
+
+	isTestFailed(ex, re);
+}
+
 void assertStrEq(char *expected, char *received) {
 	bool strAreEqual = true;
 

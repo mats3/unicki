@@ -114,6 +114,8 @@ void assertCharEq(char expected, char received);
 
 void assertIntEq(int expected, int received);
 
+void assertFloatEq(float expected, float received);
+
 void assertStrEq(char *expected, char *received);
 
 void assertPtrIsNull(void *ptr);
