@@ -14,7 +14,8 @@
 
 #define _end \
 	tearDownTest(); \
-	paddingStage--
+	paddingStage--; \
+	isLastTestPassed = 0
 
 void printTestInfo(void);
 
