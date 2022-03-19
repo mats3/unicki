@@ -22,6 +22,14 @@ typedef struct test_t {
 	int status;
 } test_t;
 
+enum { DEFAULT, QUIET };
+
+#define modus(x) \
+	modus = x;
+
+extern int modus;
+extern int isLastTestPassed;
+
 extern test_t *currentTest;
 extern int testInfo[3];
 
