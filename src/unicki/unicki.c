@@ -88,3 +88,19 @@ void assertPtrIsNull(void *ptr) {
 
 	isTestFailed(ex, re);
 }
+
+char *strOfBool(bool boolean) {
+	if (boolean) { return "TRUE"; }
+
+	return "FALSE";
+}
+
+void assertBoolEq(bool expected, bool received) {
+	if (isTestPassedConditonTrue(expected == received)) { return; }
+
+	char ex[50], re[50];
+	strcpy(ex, strOfBool(expected));
+	strcpy(re, strOfBool(received));
+
+	isTestFailed(ex, re);
+}
