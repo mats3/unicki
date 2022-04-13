@@ -129,4 +129,6 @@ void assertStrEq(char *expected, char *received);
 
 void assertPtrIsNull(void *ptr);
 
+void assertBoolEq(bool expected, bool received);
+
 #endif

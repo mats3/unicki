@@ -4,63 +4,28 @@ int getSum(int x, int y) {
 	return x + y;
 }
 
+bool isEven(int value) {
+	if (value % 2) { return false; }
+	return true;
+}
+
 _testSection_
 modus(QUIET);
 suite("calculation") {
 	suite("getSum") {
-		test("other") {
-			assertPtrIsNull(NULL);
-		}
-		test("other") {
-			assertPtrIsNull(NULL);
-		}
-		test("other") {
-			assertPtrIsNull(NULL);
-		}
-		test("other") {
-			assertPtrIsNull(NULL);
-		}
 		test("return sum of x, y") {
 			int result = getSum(10, 15);
-			assertPtrIsNull(&result);
-		}
-		test("return sum of x, y") {
-			int result = getSum(10, 15);
-			assertPtrIsNull(&result);
-			
-		}
-		test("other") {
-			assertPtrIsNull(NULL);
-		}
-		test("other") {
-			assertPtrIsNull(NULL);
-		}
-		test("float") {
-			assertFloatEq(10.12, 12.13);
-		}
-		test("other") {
-			assertPtrIsNull(NULL);
+			assertIntEq(25, result);
 		}
 	}_end;
-	suite("getSum") {
-		test("other") {
-			assertPtrIsNull(NULL);
+	suite("isEven") {
+		test("check if 11 is a odd number") {
+			bool result = isEven(11);
+			assertBoolEq(false, result);
 		}
-		test("return sum of x, y") {
-			int result = getSum(10, 15);
-			assertPtrIsNull(&result);
-			
-		}
-		test("return sum of x, y") {
-			int result = getSum(10, 15);
-			assertPtrIsNull(&result);
-			
-		}
-		test("other") {
-			assertPtrIsNull(NULL);
-		}
-		test("float") {
-			assertFloatEq(10.12, 12.13);
+		test("check if 10 is a even number") {
+			bool result = isEven(10);
+			assertBoolEq(true, result);
 		}
 	}_end;
 }_end;
