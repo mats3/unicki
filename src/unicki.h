@@ -123,12 +123,28 @@ void assertCharEq(char expected, char received);
 
 void assertIntEq(int expected, int received);
 
+void assertIntGt(int expected, int received);
+
+void assertIntLt(int expected, int received);
+
+void assertIntDiff(int expected, int received);
+
 void assertFloatEq(float expected, float received);
 
+void assertFloatGt(float expected, float received);
+
+void assertFloatLt(float expected, float received);
+
+void assertFloatDiff(float expected, float received);
+
 void assertStrEq(char *expected, char *received);
+
+void assertStrDiff(char *expected, char *received);
 
 void assertPtrIsNull(void *ptr);
 
 void assertBoolEq(bool expected, bool received);
+
+void assertBoolDiff(bool expected, bool received);
 
 #endif

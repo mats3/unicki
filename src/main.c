@@ -28,6 +28,13 @@ suite("calculation") {
 			assertBoolEq(true, result);
 		}
 	}_end;
+	suite("greather then") {
+		test("is 10 is greather then 5") {
+			assertIntGt(10, 5);
+			assertIntLt(4, 5);
+			assertBoolDiff(true, false);
+		}
+	}_end;
 }_end;
 
 _endSection_

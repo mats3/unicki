@@ -1,6 +1,6 @@
 #include"unicki.h"
 
-bool isTestPassedConditonTrue(bool condition) {
+bool isTestPassedConditionTrue(bool condition) {
 	if (condition) {
 		if (currentTest->status == FAILED)
 			return true;
@@ -31,7 +31,7 @@ void isTestFailed(char *e, char *r) {
 }
 
 void assertCharEq(char expected, char received) {
-	if (isTestPassedConditonTrue(expected == received)) { return; }
+	if (isTestPassedConditionTrue(expected == received)) { return; }
 
 	char ex[50], re[50];
 	sprintf(ex, "'%c'", expected);
@@ -41,7 +41,37 @@ void assertCharEq(char expected, char received) {
 }
 
 void assertIntEq(int expected, int received) {
-	if (isTestPassedConditonTrue(expected == received)) { return; }
+	if (isTestPassedConditionTrue(expected == received)) { return; }
+
+	char ex[50], re[50];
+	sprintf(ex, "%d", expected);
+	sprintf(re, "%d", received);
+
+	isTestFailed(ex, re);
+}
+
+void assertIntGt(int expected, int received) {
+	if (isTestPassedConditionTrue(expected > received)) { return; }
+
+	char ex[50], re[50];
+	sprintf(ex, "%d", expected);
+	sprintf(re, "%d", received);
+
+	isTestFailed(ex, re);
+}
+
+void assertIntLt(int expected, int received) {
+	if (isTestPassedConditionTrue(expected < received)) { return; }
+
+	char ex[50], re[50];
+	sprintf(ex, "%d", expected);
+	sprintf(re, "%d", received);
+
+	isTestFailed(ex, re);
+}
+
+void assertIntDiff(int expected, int received) {
+	if (isTestPassedConditionTrue(expected != received)) { return; }
 
 	char ex[50], re[50];
 	sprintf(ex, "%d", expected);
@@ -51,7 +81,37 @@ void assertIntEq(int expected, int received) {
 }
 
 void assertFloatEq(float expected, float received) {
-	if (isTestPassedConditonTrue(expected == received)) { return; }
+	if (isTestPassedConditionTrue(expected == received)) { return; }
+
+	char ex[50], re[50];
+	sprintf(ex, "%f", expected);
+	sprintf(re, "%f", received);
+
+	isTestFailed(ex, re);
+}
+
+void assertFloatGt(float expected, float received) {
+	if (isTestPassedConditionTrue(expected > received)) { return; }
+
+	char ex[50], re[50];
+	sprintf(ex, "%f", expected);
+	sprintf(re, "%f", received);
+
+	isTestFailed(ex, re);
+}
+
+void assertFloatLt(float expected, float received) {
+	if (isTestPassedConditionTrue(expected < received)) { return; }
+
+	char ex[50], re[50];
+	sprintf(ex, "%f", expected);
+	sprintf(re, "%f", received);
+
+	isTestFailed(ex, re);
+}
+
+void assertFloatDiff(float expected, float received) {
+	if (isTestPassedConditionTrue(expected != received)) { return; }
 
 	char ex[50], re[50];
 	sprintf(ex, "%f", expected);
@@ -70,7 +130,26 @@ void assertStrEq(char *expected, char *received) {
 		}
 	}
 
-	if (isTestPassedConditonTrue(strAreEqual)) { return; }
+	if (isTestPassedConditionTrue(strAreEqual)) { return; }
+
+	char ex[50], re[50];
+	sprintf(ex, "\"%s\"", expected);
+	sprintf(re, "\"%s\"", received);
+
+	isTestFailed(ex, re);
+}
+
+void assertStrDiff(char *expected, char *received) {
+	bool strAreEqual = true;
+
+	for (int i = 0; !(expected[i] == '\0' && received[i] == '\0'); i++) {
+		if (expected[i] != received[i]) {
+			strAreEqual = false;
+			break;
+		}
+	}
+
+	if (isTestPassedConditionTrue(!strAreEqual)) { return; }
 
 	char ex[50], re[50];
 	sprintf(ex, "\"%s\"", expected);
@@ -80,7 +159,7 @@ void assertStrEq(char *expected, char *received) {
 }
 
 void assertPtrIsNull(void *ptr) {
-	if (isTestPassedConditonTrue(ptr == NULL)) { return; }
+	if (isTestPassedConditionTrue(ptr == NULL)) { return; }
 
 	char ex[50], re[50];
 	sprintf(ex, "NULL");
@@ -96,7 +175,17 @@ char *strOfBool(bool boolean) {
 }
 
 void assertBoolEq(bool expected, bool received) {
-	if (isTestPassedConditonTrue(expected == received)) { return; }
+	if (isTestPassedConditionTrue(expected == received)) { return; }
+
+	char ex[50], re[50];
+	strcpy(ex, strOfBool(expected));
+	strcpy(re, strOfBool(received));
+
+	isTestFailed(ex, re);
+}
+
+void assertBoolDiff(bool expected, bool received) {
+	if (isTestPassedConditionTrue(expected != received)) { return; }
 
 	char ex[50], re[50];
 	strcpy(ex, strOfBool(expected));
